@@ -1,0 +1,13 @@
+//
+//  PrefixHeader.pch
+//  LogServerDemo
+//
+//  Created by tiny on 2019/6/18.
+//  Copyright © 2019 gw. All rights reserved.
+//
+
+
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+
+#import "LogServer.h"
+
