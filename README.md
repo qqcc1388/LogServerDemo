@@ -1,7 +1,7 @@
 # LogServerDemo
 
 日志系统主要包含两个部分
-1.本地保存
+1. 本地保存
     我们知道NSLog打印的日志一般都是直接输出到控制台，开发人员可以在控制台直接看到实时打印的log，既然可以在控制台输出，那么能否将日志输出到其他地方呢，比如说自己定义的text文件？答案是肯定的 ，在iOS中可以通过一些方法将文件重定向到指定输出位置：
 ```
     freopen([filePath cStringUsingEncoding:NSASCIIStringEncoding],"a+", stdout);
@@ -9,7 +9,7 @@
 ```
 实现了上述方法，就可以将log重定向到指定的filePath中了，既然文件中保存到了本地，那么怎么处理，怎么加密完全看你们公司的业务需求咯
 
-2.日志上传
+2. 日志上传
     日志上传首先需要将本地日志打包成zip格式的文件，这样可以减小上传的size，通过ZipArchive将日志文件打包好，通过afnetworking的 formData将文件上传了
 ```
     [formData appendPartWithFileURL:url name:@"zipFile" fileName:[NSString stringWithFormat:@"%@.zip",[self getCurrentTime]] mimeType:@"multipart/form-data" error:nil];
